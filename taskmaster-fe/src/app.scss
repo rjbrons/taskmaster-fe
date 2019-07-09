@@ -1,0 +1,52 @@
+    
+header {
+    background: grey;
+    color: ivory;
+    line-height: 2em;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+main {
+    margin: 1.5em 1em;
+
+    ul {
+        list-style-type: none;
+
+        li {
+            background: lightgray;
+            line-height: 1.6em;
+            margin: .5em;
+            padding: .5em;
+
+            details {
+                summary {
+                  display:flex;
+                    flex-direction:row;
+                    justify-content: space-between;
+                 }
+                section {
+                    background: darkgray;
+                    div {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        padding:.2345em .5em;
+
+                        &:hover {
+                            background: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+footer {
+    text-align: center;
+    background: #003366;
+    line-height: 5em;
+    color: ivory;
+}
