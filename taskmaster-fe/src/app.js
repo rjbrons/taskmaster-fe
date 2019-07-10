@@ -1,30 +1,3 @@
-// import React from 'react';
-// import logo from './logo.svg';
-// import './app.css';
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/app.js</code> and save to reload Stuff.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
-
-// export default App;
-
     
 import React, {useState, useEffect} from 'react';
 import './app.scss';
@@ -71,6 +44,7 @@ function Details(props) {
           <span>{task.description}</span>
           <span>{task.status}</span>
           <span>{task.assignee}</span>
+          <span><AddImage id={task.id}/></span>
         </div>
     </section>
 
@@ -87,6 +61,16 @@ function App() {
       <footer>The End</footer>
      </>
   );
+}
+class AddImage extends React.Component{
+ render(){
+   return(
+     <form action={`${API}/${this.props.id}/images`} method="post" encType="multipart/form-data">
+       <input name="file" type="file"></input>
+       <input name="submit" type="submit"></input>
+     </form>
+   )
+ }
 }
 
 export default App;
